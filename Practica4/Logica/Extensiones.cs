@@ -41,5 +41,35 @@ namespace Logica
 
             return multiplicacion;
         }
+
+        public static DateTime ObtenerFechaAPartirString (this string fecha)
+        {
+            DateTime fechaobtenida = new DateTime();
+            try
+            {
+               fechaobtenida = DateTime.Parse(fecha);
+            }
+            catch(Exception)
+            {
+                fechaobtenida = DateTime.MinValue;
+            }
+            return fechaobtenida;
+        }
+
+        public static string InvertirString(this string frase)
+        {
+            return frase.Reverse().ToString();
+
+        }
+
+        public static string ConcatenarArrayString(this string [] arraystring, char separador)
+        {
+            return string.Join(separador.ToString(), arraystring);
+        }
+
+        public static bool EsMail (this string cadena)
+        {
+            public 
+        }
     }
 }
