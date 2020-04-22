@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.RegularExpressions;
 
 namespace Logica
 {
@@ -67,9 +67,35 @@ namespace Logica
             return string.Join(separador.ToString(), arraystring);
         }
 
-        public static bool EsMail (this string cadena)
+        public static bool EsMail ( this string email)
         {
-            public 
+            String formato;
+            formato = "\\w+([-+.']\\w+)@\\w+([-.]\\w+)\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email,formato))
+            {
+                if (Regex.Replace(email,formato,String.Empty).Length==0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            
         }
+
+        public static int RestaNumerosEnteros(this int numero1, int numero2)
+        {
+            return numero1 - numero2;
+        }
+
+      
+
+        
     }
 }
