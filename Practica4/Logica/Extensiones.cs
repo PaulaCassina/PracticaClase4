@@ -71,6 +71,7 @@ namespace Logica
         {
             String formato;
             formato = "\\w+([-+.']\\w+)@\\w+([-.]\\w+)\\.\\w+([-.]\\w+)*";
+            //return Regex.IsMatch(email,formato); // es suficiente.
             if (Regex.IsMatch(email,formato))
             {
                 if (Regex.Replace(email,formato,String.Empty).Length==0)
