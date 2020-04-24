@@ -6,12 +6,12 @@
 
         public static double ObternerTemperaturaCelsius(double temperatura)
         {
-            return temperatura / 2.12; //usar la propiedad privada para no duplicar codigo.
+            return temperatura / factorConversion;
         }
 
         public static double ObtenerTemperaturaFahrenheit(double temperatura)
         {
-            return temperatura * 2.12;
+            return temperatura * factorConversion;
         }
     }
 }

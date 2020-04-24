@@ -11,9 +11,12 @@ namespace Logica
     {
         public static int RetornarCantidadPalabras(this string cadenastring)
         {
-            string[] arraypalabras = cadenastring.Split(' ');
-            return arraypalabras.Count();
-            
+            if (cadenastring!=null)
+            {
+                string[] arraypalabras = cadenastring.Split(' ');
+                return arraypalabras.Count();
+            }
+            return 0;
         }
 
         public static int RetornarCantidadPalabras(this string cadenastring, char separador)
@@ -67,27 +70,11 @@ namespace Logica
             return string.Join(separador.ToString(), arraystring);
         }
 
-        public static bool EsMail ( this string email)
+        public static bool EsMail(this string email)
         {
-            String formato;
-            formato = "\\w+([-+.']\\w+)@\\w+([-.]\\w+)\\.\\w+([-.]\\w+)*";
-            //return Regex.IsMatch(email,formato); // es suficiente.
-            if (Regex.IsMatch(email,formato))
-            {
-                if (Regex.Replace(email,formato,String.Empty).Length==0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-            
+            String formato= "\\w+([-+.']\\w+)@\\w+([-.]\\w+)\\.\\w+([-.]\\w+)*";
+            return Regex.IsMatch(email, formato);
+
         }
 
         public static int RestaNumerosEnteros(this int numero1, int numero2)
